@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cripto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        html {
+          scroll-behavior: smooth;
+        }
+    </style>
+    <script defer src="index.js"></script>
+</head>
+<body>
+    <!-- HEADER RESPONSIVE AMÉLIORÉ -->
+    <header class="fixed top-0 left-0 w-full bg-gray-900 text-white z-50 shadow-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
+        <!-- Logo -->
+        <div class="text-xl font-bold text-yellow-400">CryptoVision</div>
+    
+        <!-- Menu desktop -->
+        <nav class="hidden md:flex space-x-6">
+            <a href="#accueil" class="hover:text-yellow-400 transition">Accueil</a>
+            <a href="#section-bitcoin" class="hover:text-yellow-400 transition">Bitcoin</a>
+            <a href="#section-trading" class="hover:text-yellow-400 transition">Trading</a>
+            <a href="#contact" class="hover:text-yellow-400 transition">Contact</a>
+        </nav>
+    
+        <!-- Bouton mobile -->
+        <button id="menu-btn" class="md:hidden focus:outline-none relative w-6 h-6 z-50">
+            <!-- Icône hamburger -->
+            <div id="menu-icon" class="w-full h-full relative transition duration-300 ease-in-out">
+            <span class="block absolute h-0.5 w-full bg-yellow-400 transform transition duration-300 ease-in-out top-0" id="line1"></span>
+            <span class="block absolute h-0.5 w-full bg-yellow-400 transform transition duration-300 ease-in-out top-2.5" id="line2"></span>
+            <span class="block absolute h-0.5 w-full bg-yellow-400 transform transition duration-300 ease-in-out top-5" id="line3"></span>
+            </div>
+        </button>
+        </div>
+    
+        <!-- Menu mobile avec overlay animé -->
+        <div id="mobile-menu" class="hidden fixed top-0 left-0 w-full h-screen bg-gray-900 bg-opacity-95 flex flex-col items-center justify-center space-y-6 text-xl transition duration-300 ease-in-out">
+        <a href="#accueil" class="hover:text-yellow-400 transition">Accueil</a>
+        <a href="#section-bitcoin" class="hover:text-yellow-400 transition">Bitcoin</a>
+        <a href="#section-trading" class="hover:text-yellow-400 transition">Trading</a>
+        <a href="#contact" class="hover:text-yellow-400 transition">Contact</a>
+        </div>
+    </header>
+    
+    <main class="text-white">
+
+                <!-- SECTION 1 – ACCUEIL -->
+        <section class="min-h-screen flex items-center justify-center text-center px-4 bg-cover bg-center relative" style="background-image: url('https://images.pexels.com/photos/843700/pexels-photo-843700.jpeg');">
+            <!-- Couche sombre -->
+            <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        
+            <!-- Contenu principal -->
+            <div class="relative z-10 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 md:mt-8 mt-[40%]">Bitcoin et Trading : <br>Comprendre, Analyser, Anticiper</h1>
+            <p class="text-lg md:text-xl mb-8 text-gray-200">
+                Explore l’univers fascinant de la cryptomonnaie. Depuis <span class="text-yellow-400 font-semibold">2009</span>, le Bitcoin transforme la finance mondiale.
+            </p>
+            <a href="#section-bitcoin" class="inline-block bg-yellow-400 text-gray-900 font-semibold py-3 px-6 rounded hover:bg-yellow-500 transition mb-8">
+                Découvrir maintenant
+            </a>
+        
+            <!-- Chiffres clés -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-800 bg-opacity-90 p-6 rounded-lg text-left shadow-xl mb-8">
+                <div>
+                <h3 class="text-yellow-400 text-xl font-bold">+420 millions</h3>
+                <p class="text-gray-300">d'utilisateurs de cryptomonnaies dans le monde</p>
+                </div>
+                <div>
+                <h3 class="text-yellow-400 text-xl font-bold">+19 millions</h3>
+                <p class="text-gray-300">de Bitcoins déjà minés</p>
+                </div>
+                <div>
+                <h3 class="text-yellow-400 text-xl font-bold">+8 800</h3>
+                <p class="text-gray-300">cryptomonnaies listées</p>
+                </div>
+                <div>
+                <h3 class="text-yellow-400 text-xl font-bold">+1 500 milliards $</h3>
+                <p class="text-gray-300">de capitalisation crypto mondiale</p>
+                </div>
+            </div>
+        
+            <!-- Vidéo encadrée -->
+            <div class="rounded-lg overflow-hidden shadow-xl border border-gray-700">
+                <video controls autoplay muted loop class="w-full h-64 object-cover">
+                <source src="https://player.vimeo.com/external/590300537.sd.mp4?s=c04c1f12fa51d2ef62564c0832fc2cd3205a4c02&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+                Votre navigateur ne supporte pas la vidéo.
+                </video>
+            </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2 – QU’EST-CE QUE LE BITCOIN -->
+        <section id="section-bitcoin" class="py-20 px-4 bg-gray-950 text-gray-200">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            
+            <!-- Image -->
+            <div class="flex-1">
+                <img src="https://images.pexels.com/photos/843700/pexels-photo-843700.jpeg" alt="Bitcoin" class="rounded-lg shadow-xl w-full object-cover">
+            </div>
+        
+            <!-- Contenu texte -->
+            <div class="flex-1">
+                <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 mb-4">Qu’est-ce que le Bitcoin ?</h2>
+                <h3 class="text-xl text-gray-300 mb-6">L’origine d’une révolution monétaire</h3>
+                <p class="text-gray-400 mb-6 leading-relaxed">
+                Le <strong>Bitcoin</strong> est une cryptomonnaie décentralisée créée en 2009 par un individu ou un groupe connu sous le nom de <strong>Satoshi Nakamoto</strong>. Il permet d’effectuer des paiements sécurisés sans passer par une banque ou un gouvernement.
+                Il repose sur une technologie innovante appelée <strong>blockchain</strong> – un registre public immuable.
+                </p>
+        
+                <!-- Chiffres historiques -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm md:text-base">
+                <div class="bg-gray-800 p-4 rounded shadow transition duration-500 ease transform hover:scale-105">
+                    <span class="text-yellow-400 font-semibold block">  <span><i class="bi bi-calendar text-yellow-400 text-xl"></i></span> Création :</span>
+                    2008 (publication du whitepaper)
+                </div>
+                <div class="bg-gray-800 p-4 rounded shadow transition duration-500 ease transform hover:scale-105">
+                    <span class="text-yellow-400 font-semibold block">  <span><i class="bi bi-rocket text-yellow-400 text-xl"></i></span> Lancement :</span>
+                    3 janvier 2009
+                </div>
+                <div class="bg-gray-800 p-4 rounded shadow transition duration-500 ease transform hover:scale-105">
+                    <span class="text-yellow-400 font-semibold block"> <span> <i class="bi bi-box text-yellow-400 text-xl"></i></span> Premier bloc :</span>
+                    Genesis Block – 50 BTC
+                </div>
+                <div class="bg-gray-800 p-4 rounded shadow transition duration-500 ease transform hover:scale-105">
+                    <span class="text-yellow-400 font-semibold block"> <span> <i class="bi bi-currency-bitcoin text-yellow-400 text-xl"></i></span> Offre max :</span>
+                    21 millions de BTC
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        
+        <!-- SECTION 3 – TRADING CRYPTO -->
+        <section id="section-trading" class="py-20 px-4 bg-gray-900 text-gray-200">
+
+            <!-- Vidéo explicative du trading -->
+            <div class="mt-12">
+                <h3 class="text-2xl font-semibold text-yellow-400 mb-4 text-center">Comprendre le trading en images</h3>
+                <div class="relative w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-xl">
+                <video controls autoplay muted loop class="w-full h-[300px] object-cover rounded-lg border border-yellow-400">
+                    <source src="https://player.vimeo.com/external/480914336.sd.mp4?s=f46c44e16c8cb97c065d911eb5c4dfc25df6312b&profile_id=164" type="video/mp4">
+                    Votre navigateur ne supporte pas la vidéo.
+                </video>
+                </div>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 mb-4 mt-8 text-center">Le Trading Crypto : Opportunités & Risques</h2>
+            <p class="text-center text-gray-400 mb-12 max-w-3xl mx-auto">
+                Le trading crypto consiste à acheter et vendre des cryptomonnaies pour tirer profit de la volatilité du marché. Cela demande de la stratégie, de l’analyse, et une bonne gestion des risques.
+            </p>
+        
+            <!-- Image -->
+            <div class="mb-12">
+                <img src="https://images.pexels.com/photos/6802043/pexels-photo-6802043.jpeg" alt="Trader crypto" class="rounded-lg shadow-xl w-full object-cover h-[400px] object-center">
+            </div>
+        
+            <!-- Stratégies -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Day Trading -->
+                <div class="bg-gray-800 p-6 rounded shadow text-center hover:scale-105 transition">
+                <i class="bi bi-graph-up-arrow text-yellow-400 text-3xl mb-4"></i>
+                <h3 class="text-xl font-semibold text-yellow-400 mb-2">Day Trading</h3>
+                <p class="text-gray-400 text-sm">Achat/revente rapide en une journée. Requiert une veille continue et des outils techniques.</p>
+                </div>
+                
+                <!-- Swing Trading -->
+                <div class="bg-gray-800 p-6 rounded shadow text-center hover:scale-105 transition">
+                <i class="bi bi-hourglass-split text-yellow-400 text-3xl mb-4"></i>
+                <h3 class="text-xl font-semibold text-yellow-400 mb-2">Swing Trading</h3>
+                <p class="text-gray-400 text-sm">Opérations sur plusieurs jours ou semaines. Basé sur les tendances du marché.</p>
+                </div>
+        
+                <!-- Trading Automatisé -->
+                <div class="bg-gray-800 p-6 rounded shadow text-center hover:scale-105 transition">
+                <i class="bi bi-cpu text-yellow-400 text-3xl mb-4"></i>
+                <h3 class="text-xl font-semibold text-yellow-400 mb-2">Trading Automatisé</h3>
+                <p class="text-gray-400 text-sm">Utilisation de bots programmés pour exécuter des stratégies 24h/24.</p>
+                </div>
+            </div>
+            </div>
+
+            <!-- Graphique du prix du Bitcoin -->
+            <div class="mt-12">
+                <h3 class="text-2xl font-semibold text-yellow-400 mb-4 text-center">Évolution du prix du Bitcoin</h3>
+                <div class="bg-gray-800 p-4 rounded-lg shadow-lg max-w-4xl mx-auto">
+                <canvas id="bitcoinChart" class="w-full h-64"></canvas>
+                </div>
+            </div>
+            
+        </section>
+
+        <!-- SECTION FAQ -->
+        <section id="faq" class="py-20 px-4 bg-gray-950 text-gray-200">
+            <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 text-center mb-8">Questions fréquentes</h2>
+            
+            <!-- FAQ Item -->
+            <div class="space-y-4">
+                <!-- Question 1 -->
+                <div class="border border-gray-700 rounded-lg overflow-hidden">
+                <button class="w-full text-left px-6 py-4 bg-gray-900 hover:bg-gray-800 transition flex justify-between items-center faq-toggle">
+                    <span class="font-semibold">Le Bitcoin est-il légal ?</span>
+                    <i class="bi bi-chevron-down transition-transform duration-300"></i>
+                </button>
+                <div class="hidden px-6 py-4 bg-gray-800 text-gray-400">
+                    Dans la majorité des pays, oui. Le Bitcoin est légal tant qu’il n’est pas utilisé à des fins illégales. Certains pays ont des restrictions spécifiques.
+                </div>
+                </div>
+        
+                <!-- Question 2 -->
+                <div class="border border-gray-700 rounded-lg overflow-hidden">
+                <button class="w-full text-left px-6 py-4 bg-gray-900 hover:bg-gray-800 transition flex justify-between items-center faq-toggle">
+                    <span class="font-semibold">Comment commencer à trader des cryptos ?</span>
+                    <i class="bi bi-chevron-down transition-transform duration-300"></i>
+                </button>
+                <div class="hidden px-6 py-4 bg-gray-800 text-gray-400">
+                    Il faut d’abord choisir une plateforme d’échange sécurisée (comme Binance ou Coinbase), créer un compte, et déposer des fonds. Puis apprendre les bases avant de trader.
+                </div>
+                </div>
+        
+                <!-- Question 3 -->
+                <div class="border border-gray-700 rounded-lg overflow-hidden">
+                <button class="w-full text-left px-6 py-4 bg-gray-900 hover:bg-gray-800 transition flex justify-between items-center faq-toggle">
+                    <span class="font-semibold">Combien faut-il investir pour commencer ?</span>
+                    <i class="bi bi-chevron-down transition-transform duration-300"></i>
+                </button>
+                <div class="hidden px-6 py-4 bg-gray-800 text-gray-400">
+                    Il est possible de commencer avec seulement 10 ou 20 dollars. Le plus important est de ne jamais investir plus que ce que l’on peut se permettre de perdre.
+                </div>
+                </div>
+        
+                <!-- Question 4 -->
+                <div class="border border-gray-700 rounded-lg overflow-hidden">
+                <button class="w-full text-left px-6 py-4 bg-gray-900 hover:bg-gray-800 transition flex justify-between items-center faq-toggle">
+                    <span class="font-semibold">Où stocker mes cryptomonnaies ?</span>
+                    <i class="bi bi-chevron-down transition-transform duration-300"></i>
+                </button>
+                <div class="hidden px-6 py-4 bg-gray-800 text-gray-400">
+                    Vous pouvez les garder sur un portefeuille en ligne, mais un portefeuille physique (hardware wallet) est plus sécurisé.
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- SECTION CONTACT & NEWSLETTER -->
+        <section id="contact" class="py-20 px-4 bg-gray-900 text-gray-200">
+            <div class="max-w-4xl mx-auto space-y-12">
+            
+            <!-- Titre -->
+            <div class="text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-yellow-400 mb-4">Contact & Newsletter</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">Une question ? Un projet ? Ou envie de recevoir nos actualités crypto ? Écris-nous ou abonne-toi ci-dessous.</p>
+            </div>
+        
+            <!-- Formulaires -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+                <!-- Formulaire de contact -->
+                <form class="space-y-4 bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold text-yellow-400 mb-2">Écris-nous</h3>
+                <div>
+                    <label class="block mb-1 text-sm">Nom</label>
+                    <input type="text" placeholder="Ton nom" class="w-full px-4 py-2 rounded bg-gray-900 text-gray-200 border border-gray-700 focus:outline-none focus:border-yellow-400">
+                </div>
+                <div>
+                    <label class="block mb-1 text-sm">Email</label>
+                    <input type="email" placeholder="email@example.com" class="w-full px-4 py-2 rounded bg-gray-900 text-gray-200 border border-gray-700 focus:outline-none focus:border-yellow-400">
+                </div>
+                <div>
+                    <label class="block mb-1 text-sm">Message</label>
+                    <textarea rows="4" placeholder="Ton message..." class="w-full px-4 py-2 rounded bg-gray-900 text-gray-200 border border-gray-700 focus:outline-none focus:border-yellow-400"></textarea>
+                </div>
+                <button type="submit" class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold py-2 px-4 rounded w-full">Envoyer</button>
+                </form>
+        
+                <!-- Newsletter -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-semibold text-yellow-400 mb-4">Newsletter Crypto</h3>
+                    <p class="text-gray-400 mb-4">Inscris-toi pour recevoir des actus, analyses et conseils sur le Bitcoin et le trading.</p>
+                </div>
+                <form class="space-y-4">
+                    <input type="email" placeholder="Ton email" class="w-full px-4 py-2 rounded bg-gray-900 text-gray-200 border border-gray-700 focus:outline-none focus:border-yellow-400">
+                    <button type="submit" class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold py-2 px-4 rounded w-full">S’abonner</button>
+                </form>
+                </div>
+        
+            </div>
+            </div>
+        </section>
+        
+  
+        
+  
+        
+    </main>
+    <footer class="bg-gray-900 text-white text-center p-2">
+        <p>
+            &copy; copy 2025 all rigths reserved | designed by Jessica Omari
+        </p>
+    </footer>
+</body>
+</html>
